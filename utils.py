@@ -10,6 +10,9 @@ async def download_audio(url: str, out: str):
 
     await proc.wait()
 
+    if proc.returncode != 0:
+        raise RuntimeError(f"yt-dlp failed with code {proc.returncode}")
+
 
 def clean_url(url: str) -> str:
     return url.split("&")[0].strip()

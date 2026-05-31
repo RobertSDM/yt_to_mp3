@@ -10,14 +10,14 @@ async def download(sem: asyncio.Semaphore, url: str, outpath: str):
         try:
             await download_audio(url, outpath)
             print("Audio downloaded successfully")
-        except Exception:
+        except RuntimeError:
             print("Url: ", url, " [FAILED]")
 
 
 async def main():
     argv = sys.argv[1:]
 
-    if len(argv) < 2 or len(argv) > 2:
+    if len(argv) != 2:
         print("Usage: <outpath> <url>")
         return
 
