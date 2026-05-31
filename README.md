@@ -1,6 +1,6 @@
-# Video to MP3
+# Youtube video to MP3
 
-Simple python binding to use `yt-dlp` and `asyncio` to download and convert videos into high-quality MP3 files concurrently.
+Simple python binding to use `yt-dlp` and `asyncio` to download and convert youtube videos into high-quality MP3 files concurrently.
 
 ## Features
 
@@ -26,7 +26,7 @@ Clone the repo:
 
 ```bash
 cd /path/to/download
-git clone https://github.com/RobertSDM/video_to_mp3
+git clone https://github.com/RobertSDM/yt_to_mp3
 cd ./video_to_mp3
 ```
 
