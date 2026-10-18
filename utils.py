@@ -1,4 +1,15 @@
 import asyncio
+import shutil
+
+
+def check_for_dependencies():
+    path = shutil.which("yt-dlp")
+    if path is None:
+        raise RuntimeError("yt-dlp is not installed or not in PATH")
+
+    path = shutil.which("ffmpeg")
+    if path is None:
+        raise RuntimeError("ffmpeg is not installed or not in PATH")
 
 
 async def download_audio(url: str, out: str):

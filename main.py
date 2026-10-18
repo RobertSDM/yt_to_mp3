@@ -2,7 +2,7 @@ import asyncio
 import os
 import sys
 
-from utils import clean_url, download_audio, is_url_valid
+from utils import check_for_dependencies, clean_url, download_audio, is_url_valid
 
 
 async def download(sem: asyncio.Semaphore, url: str, outpath: str):
@@ -15,6 +15,8 @@ async def download(sem: asyncio.Semaphore, url: str, outpath: str):
 
 
 async def main():
+    check_for_dependencies()
+    
     argv = sys.argv[1:]
 
     if len(argv) != 2:
